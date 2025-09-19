@@ -248,4 +248,22 @@ button:hover{
     flex-direction: column;
     gap: 0.7rem;
   }
+  #expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#expense-name{
+    padding:1rem;
+}
+#expense-amount{
+    padding:1rem;
+}
+button{
+    padding:0.5rem;
+}
+button:hover{
+    background-color: #063375;
+}
+
 }
