@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 420px;
+  width: 95vw;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 2.5rem 2rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, #2d6cdf 0%, #a8edea 100%);
+  opacity: 0.18;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #2d6cdf;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  z-index: 1;
+  position: relative;
+}
+
+#expense-form {
+  display: flex;
+  
+  gap: 1rem;
+}
+#expense-name{
+    background-color: rgb(231, 239, 241);
+    border-radius: 0px 8px 0px 8px;
+    border: 0.5px solid gray;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    padding:0.5rem;
+}
+#expense-amount{
+    background-color: rgb(231, 239, 241);
+    border-radius: 0px 8px 0px 8px;
+    border: 0.5px solid gray;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+button{
+    background-color: #2d6cdf;
+    border-radius: 0px 8px 0px 8px;
+    border: 0.5px solid gray;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    color:white;
+}
+button:hover{
+    background-color: #063375;
+}
+
+.balance {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin: 1.2rem 0 1.5rem 0;
+  text-align: center;
+  color: #222;
+  background: linear-gradient(90deg, #a8edea 0%, #2d6cdf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.income-expense {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin: 2rem 0 1.5rem 0;
+}
+
+.income,
+.expense {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  padding: 1.1rem 0.5rem;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(45, 108, 223, 0.07);
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.income {
+  color: #27ae60;
+  border-bottom: 3px solid #27ae60;
+}
+
+.expense {
+  color: #e74c3c;
+  border-bottom: 3px solid #e74c3c;
+}
+
+.transaction-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 1.5rem 0;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 1;
+  position: relative;
+}
+
+.transaction-list li {
+  background: rgba(255, 255, 255, 0.7);
+  border-left: 6px solid #2d6cdf;
+  margin-bottom: 0.85rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(45, 108, 223, 0.06);
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+  font-size: 1.08rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.transaction-list li:hover {
+  transform: scale(1.025);
+  box-shadow: 0 6px 18px rgba(45, 108, 223, 0.13);
+  background: rgba(168, 237, 234, 0.18);
+}
+
+.transaction-list li.negative {
+  border-left-color: #e74c3c;
+}
+
+.transaction-list li.positive {
+  border-left-color: #27ae60;
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #e74c3c 0%, #ffb199 100%);
+  border: none;
+  color: #fff;
+  font-size: 1.15rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.13);
+  transition: background 0.2s, transform 0.15s;
+  outline: none;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+  transform: scale(1.12);
+}
+
+.add-transaction {
+  margin-top: 2.2rem;
+  z-index: 1;
+  position: relative;
+}
+
+.add-transaction input,
+.add-transaction button {
+  width: 100%;
+  padding: 0.85rem;
+  margin-bottom: 1.1rem;
+  border-radius: 10px;
+  border: 1.5px solid #dbeafe;
+  font-size: 1.08rem;
+  background: rgba(255, 255, 255, 0.7);
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.add-transaction input:focus {
+  border: 1.5px solid #2d6cdf;
+  box-shadow: 0 2px 8px rgba(45, 108, 223, 0.13);
+}
+
+.add-transaction button {
+  background: linear-gradient(90deg, #2d6cdf 0%, #a8edea 100%);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(45, 108, 223, 0.13);
+  letter-spacing: 1px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.add-transaction button:hover {
+  background: linear-gradient(90deg, #1a4fa0 0%, #2d6cdf 100%);
+  transform: scale(1.04);
+}
+
+/* Scrollbar Styling */
+.transaction-list::-webkit-scrollbar {
+  width: 8px;
+}
+.transaction-list::-webkit-scrollbar-thumb {
+  background: #dbeafe;
+  border-radius: 6px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .income-expense {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
